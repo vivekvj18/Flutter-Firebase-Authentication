@@ -13,17 +13,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
+      body: Padding(
+        padding: const EdgeInsets.all(25),
+        child: Column(
+          children: [ ElevatedButton(
           child: Text("Logout"),
           onPressed: () {
             FirebaseAuth.instance.signOut().then((value) {
               print("Signed Out");
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => SignInScreen()));
+          
             });
           },
         ),
+          ],
+        ),
+        
       ),
     );
   }

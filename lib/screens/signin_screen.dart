@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_signin/TU_PAGES/TU_Page.dart';
 import 'package:firebase_signin/reusable_widgets/reusable_widget.dart';
 import 'package:firebase_signin/screens/home_screen.dart';
 import 'package:firebase_signin/screens/reset_password.dart';
@@ -56,7 +57,7 @@ class _SignInScreenState extends State<SignInScreen> {
                           password: _passwordTextController.text)
                       .then((value) {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                        MaterialPageRoute(builder: (context) => Home()));
                   }).onError((error, stackTrace) {
                     print("Error ${error.toString()}");
                   });
